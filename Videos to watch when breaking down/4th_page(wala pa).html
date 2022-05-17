@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Satisfying Videos</title>
+    <link rel="icon" type="image/icon" href="favicon.png">
+</head>
+<body>
+    <nav>
+        <ul class="nav">
+          <li><a href="https://juneroee.github.io/FINALPROJECT/Landing%20Page/LandingPage.html">Home</a></li>
+          <li><a href="1st_page.html">Funny Videos</a></li>
+          <li><a href="2nd_page.html">Mood Booster videos</a></li>
+          <li><a href="3rd_page.html">Uplifting videos</a></li>
+          <li><a href="4th_page(wala pa).html">Satisfying videos</a></li>
+          <li><a href="5th_page.html">Cute Animals</a></li>
+          <li><a href="6th_page.html">Motivational Videos</a></li>
+          <li><a href="7th_page.html">Meditation Videos</a></li>
+          <li><a href="8th_page.html">Bible Says About Suicide</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Satisfying Videos</h1>
+        <div id="video_player">
+            <video controls poster="Pink Purple gradient Kawaii Cute Vlog YouTube Intro.gif" class="video" id="video">
+                <source src="vids/satifying/X2Download.com-Oddly Satisfying Video to Cure Your Boredom with Relaxing Music and ASMR Sound-(480p).mp4" type="video/mp4">
+                <source src="vids/satifying/X2Download.com-Oddly Satisfying Video to Cure Your Boredom with Relaxing Music and ASMR Sound-(480p).mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="scrollBox">
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Oddly Satisfying Video 1</h3>
+                    <a href="vids/satifying/X2Download.com-Oddly Satisfying Video to Cure Your Boredom with Relaxing Music and ASMR Sound-(480p).mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Oddly Satisfying Video 2</h3>
+                    <a href="vids/satifying/X2Download.com-Oddly Satisfying Video with Calming and Relaxing Music-(480p) (1).mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Oddly Satisfying Video 3</h3>
+                    <a href="vids/satifying/X2Download.com-Oddly Satisfying Video With Calming Deep Sleep Music - Stress Relief & Meditation #31(360p) (1).mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Oddly Satisfying Video 4</h3>
+                    <a href="vids//satifying/X2Download.com-Oddly Satisfying Video With Calming Deep Sleep Music - Stress Relief & Meditation #31(360p).mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Oddly Satisfying Video 5</h3>
+                    <a href="vids/satifying/X2Download.com-Very Satisfying and Relaxing Compilation 148 Kinetic Sand ASMR(360p).mp4"class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Oddly Satisfying Video 6</h3>
+                    <a href="vids/satifying/X2Download.com-Very Satisfying and Relaxing Compilation 148 Kinetic Sand ASMR-(480p).mp4" class="btn">Watch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let anchors = document.querySelectorAll('div .btn');
+    let links = [...anchors];
+    
+    for (let i=0; i<links.length; i++) {
+        links[i].onclick = handler;
+    }
+    function handler(e) {
+        e.preventDefault();
+        let videotarget = this.getAttribute("href");
+        let filename = videotarget.substr(0, videotarget.lastIndexOf('.'));
+        let video = document.getElementById("video");
+        video.removeAttribute("poster");
+        let source = document.querySelectorAll("#video_player video source");
+        source[0].src = filename + ".mp4";
+        source[1].src = filename + ".m4v";
+        video.load();
+        video.play();
+    }
+    </script>
+</body>
+</html>

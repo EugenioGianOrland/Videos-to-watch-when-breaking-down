@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Uplifting Videos</title>
+    <link rel="icon" type="image/icon" href="favicon.png">
+</head>
+<body>
+    <nav>
+        <ul class="nav">
+          <li><a href="https://juneroee.github.io/FINALPROJECT/Landing%20Page/LandingPage.html">Home</a></li>
+          <li><a href="1st_page.html">Funny Videos</a></li>
+          <li><a href="2nd_page.html">Mood Booster videos</a></li>
+          <li><a href="3rd_page.html">Uplifting videos</a></li>
+          <li><a href="4th_page(wala pa).html">Satisfying videos</a></li>
+          <li><a href="5th_page.html">Cute Animals</a></li>
+          <li><a href="6th_page.html">Motivational Videos</a></li>
+          <li><a href="7th_page.html">Meditation Videos</a></li>
+          <li><a href="8th_page.html">Bible Says About Suicide</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Uplifting Videos</h1>
+        <div id="video_player">
+            <video controls poster="Pink Purple gradient Kawaii Cute Vlog YouTube Intro.gif" class="video" id="video">
+                <source src="vids/funny vids/AWW NEW FUNNY 😂 Funny Videos #278.mp4" type="video/mp4">
+                <source src="vids/funny vids/AWW NEW FUNNY 😂 Funny Videos #278.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="scrollBox">
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Lift Depression With These 3 Prescriptions</h3>
+                    <a href="vids/uplifting vids/Lift Depression With These 3 Prescriptions- Without-Pills _ Susan Heitler _ TEDxWilmington.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>OVERCOME DEPRESSION</h3>
+                    <a href="vids/uplifting vids/OVERCOME DEPRESSION - Powerful Motivational Speech Video (Featuring Dr. Jessica Houston).mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Watch This Video When You’re Feeling Down</h3>
+                    <a href="vids/uplifting vids/Watch This Video When You’re Feeling Down.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Please Don't Kill Yourself</h3>
+                    <a href="vids/uplifting vids/Y2Mate.is - SUICIDE  Please Don't Kill Yourself  Powerful Motivational Speech on Suicide.-ua_CHNdITec-720p-1652433133049.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>You Are Not Alone</h3>
+                    <a href="vids/uplifting vids/You Are Not Alone _ Overcome Depression, Anxiety and Mental Health Problem Motivational Video.mp4"class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>YOU ARE STRONG</h3>
+                    <a href="vids/uplifting vids/YOU ARE STRONG - Inspiring Speech On Depression & Mental Health.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let anchors = document.querySelectorAll('div .btn');
+    let links = [...anchors];
+    
+    for (let i=0; i<links.length; i++) {
+        links[i].onclick = handler;
+    }
+    function handler(e) {
+        e.preventDefault();
+        let videotarget = this.getAttribute("href");
+        let filename = videotarget.substr(0, videotarget.lastIndexOf('.'));
+        let video = document.getElementById("video");
+        video.removeAttribute("poster");
+        let source = document.querySelectorAll("#video_player video source");
+        source[0].src = filename + ".mp4";
+        source[1].src = filename + ".m4v";
+        video.load();
+        video.play();
+    }
+    </script>
+</body>
+</html>

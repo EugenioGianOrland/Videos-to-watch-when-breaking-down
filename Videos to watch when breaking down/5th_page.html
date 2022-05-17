@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cute Animal Videos</title>
+    <link rel="icon" type="image/icon" href="favicon.png">
+</head>
+<body>
+    <nav>
+        <ul class="nav">
+          <li><a href="https://juneroee.github.io/FINALPROJECT/Landing%20Page/LandingPage.html">Home</a></li>
+          <li><a href="1st_page.html">Funny Videos</a></li>
+          <li><a href="2nd_page.html">Mood Booster videos</a></li>
+          <li><a href="3rd_page.html">Uplifting videos</a></li>
+          <li><a href="4th_page(wala pa).html">Satisfying videos</a></li>
+          <li><a href="5th_page.html">Cute Animals</a></li>
+          <li><a href="6th_page.html">Motivational Videos</a></li>
+          <li><a href="7th_page.html">Meditation Videos</a></li>
+          <li><a href="8th_page.html">Bible Says About Suicide</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Cute Animal Videos</h1>
+        <div id="video_player">
+            <video controls poster="Pink Purple gradient Kawaii Cute Vlog YouTube Intro.gif" class="video" id="video">
+                <source src="vids/funny vids/AWW NEW FUNNY 😂 Funny Videos #278.mp4" type="video/mp4">
+                <source src="vids/funny vids/AWW NEW FUNNY 😂 Funny Videos #278.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="scrollBox">
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Funniest Cats And Dogs Videos</h3>
+                    <a href="vids/cute animal vids/X2Download.com-Best Funny Animal Videos 2022 �� - Funniest Cats And Dogs Videos ��-(480p).mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Cat Memes That Cured My Anxiety and Depression</h3>
+                    <a href="vids/cute animal vids/X2Download.com-Cat memes that cured my anxiety and depression-(480p).mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Cute Animals for When You are Stressed</h3>
+                    <a href="vids/cute animal vids/X2Download.com-Cute Animals for When You are Stressed-(480p).mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Cute Baby Animals 1</h3>
+                    <a href="vids/cute animal vids/X2Download.com-Cute baby animals Videos Compilation cute moment of the animals - Cutest Animals #3-(480p).mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Cute Baby Animals 2</h3>
+                    <a href="vids/cute animal vids/X2Download.com-Cute baby animals Videos Compilation cute moment of the animals - Cutest Animals #4-(480p).mp4"class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Cute Baby Animals 3</h3>
+                    <a href="vids/cute animal vids/X2Download.com-Cute baby animals Videos Compilation cutest moment of the animals - Cutest Puppies #2-(480p).mp4" class="btn">Watch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let anchors = document.querySelectorAll('div .btn');
+    let links = [...anchors];
+    
+    for (let i=0; i<links.length; i++) {
+        links[i].onclick = handler;
+    }
+    function handler(e) {
+        e.preventDefault();
+        let videotarget = this.getAttribute("href");
+        let filename = videotarget.substr(0, videotarget.lastIndexOf('.'));
+        let video = document.getElementById("video");
+        video.removeAttribute("poster");
+        let source = document.querySelectorAll("#video_player video source");
+        source[0].src = filename + ".mp4";
+        source[1].src = filename + ".m4v";
+        video.load();
+        video.play();
+    }
+    </script>
+</body>
+</html>

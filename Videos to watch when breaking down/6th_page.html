@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Motivational Videos</title>
+    <link rel="icon" type="image/icon" href="favicon.png">
+</head>
+<body>
+    <nav>
+        <ul class="nav">
+          <li><a href="https://juneroee.github.io/FINALPROJECT/Landing%20Page/LandingPage.html">Home</a></li>
+          <li><a href="1st_page.html">Funny Videos</a></li>
+          <li><a href="2nd_page.html">Mood Booster videos</a></li>
+          <li><a href="3rd_page.html">Uplifting videos</a></li>
+          <li><a href="4th_page(wala pa).html">Satisfying videos</a></li>
+          <li><a href="5th_page.html">Cute Animals</a></li>
+          <li><a href="6th_page.html">Motivational Videos</a></li>
+          <li><a href="7th_page.html">Meditation Videos</a></li>
+          <li><a href="8th_page.html">Bible Says About Suicide</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Motivational Videos</h1>
+        <div id="video_player">
+            <video controls poster="Pink Purple gradient Kawaii Cute Vlog YouTube Intro.gif" class="video" id="video">
+                <source src="vids/funny vids/AWW NEW FUNNY 😂 Funny Videos #278.mp4" type="video/mp4">
+                <source src="vids/funny vids/AWW NEW FUNNY 😂 Funny Videos #278.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="scrollBox">
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>How To Move On, Let Go & Leave Your Past in The Past</h3>
+                    <a href="vids/motivational/How To Move On, Let Go & Leave Your Past in The Past (Powerful Speech).mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>HOW TO OVERCOME DEPRESSION and HARD TIMES</h3>
+                    <a href="vids/motivational/HOW TO OVERCOME DEPRESSION and HARD TIMES Best Motivational Videos Compilation for 2017.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>Overcome Depression & Anxiety</h3>
+                    <a href="vids/motivational/Overcome Depression & Anxiety - Motivational Video - World Mental Health Day.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>This Is Not The End</h3>
+                    <a href="vids/motivational/This Is Not The End - Inspiring Speech On Depression & Mental Health.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>WHEN YOU FEEL LIKE QUITTING</h3>
+                    <a href="vids/motivational/WHEN YOU FEEL LIKE QUITTING - Best Inspiring Speech on Mental Health.mp4"class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="thumbnails/thumbnail.png">
+                <div class="box-content">
+                    <h3>How To Gain MOTIVATION Back</h3>
+                    <a href="vids/motivational/Tyson Fury  How To Gain MOTIVATION Back.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let anchors = document.querySelectorAll('div .btn');
+    let links = [...anchors];
+    
+    for (let i=0; i<links.length; i++) {
+        links[i].onclick = handler;
+    }
+    function handler(e) {
+        e.preventDefault();
+        let videotarget = this.getAttribute("href");
+        let filename = videotarget.substr(0, videotarget.lastIndexOf('.'));
+        let video = document.getElementById("video");
+        video.removeAttribute("poster");
+        let source = document.querySelectorAll("#video_player video source");
+        source[0].src = filename + ".mp4";
+        source[1].src = filename + ".m4v";
+        video.load();
+        video.play();
+    }
+    </script>
+</body>
+</html>
